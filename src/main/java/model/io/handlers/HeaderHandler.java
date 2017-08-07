@@ -33,11 +33,8 @@ public class HeaderHandler implements Handler {
         }
         if (rules != null) {
             for (Rule rule : rules) {
-                try {
-                    rule.applyTo(fields, context);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                    return null; // todo
+                if(!rule.applyTo(fields, context)){
+
                 }
             }
         }
