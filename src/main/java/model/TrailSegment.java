@@ -21,4 +21,9 @@ public class TrailSegment implements Segment {
     public void toTUTDF(StringBuffer stringBuffer) {
         // TODO: 04/08/2017
     }
+
+    @Override
+    public SegmentType getType() {
+        return SegmentType.TRLR;
+    }
 }

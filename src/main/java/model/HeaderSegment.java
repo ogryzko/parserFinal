@@ -70,4 +70,9 @@ public class HeaderSegment implements Segment {
     public String getMemberData() {
         return memberData;
     }
+
+    @Override
+    public SegmentType getType() {
+        return SegmentType.TUTDF;
+    }
 }
