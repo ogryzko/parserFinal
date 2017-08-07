@@ -17,6 +17,7 @@ public class HeaderSegment implements Segment {
     private final String authorizationCode; // M
     private final String memberData; // O
 
+
     public HeaderSegment(String segmentTag, String version, Date versionDate, String memberCode,
                          String cycleIdentification, Date reportDate, String authorizationCode, String memberData) {
         this.segmentTag = segmentTag;
@@ -28,6 +29,8 @@ public class HeaderSegment implements Segment {
         this.authorizationCode = authorizationCode;
         this.memberData = memberData;
     }
+
+
 
     @Override
     public String toTUTDF() {
@@ -74,5 +77,20 @@ public class HeaderSegment implements Segment {
     @Override
     public SegmentType getType() {
         return SegmentType.TUTDF;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("HeaderSegment{");
+        sb.append("segmentTag='").append(segmentTag).append('\'');
+        sb.append(", version='").append(version).append('\'');
+        sb.append(", versionDate=").append(versionDate);
+        sb.append(", memberCode='").append(memberCode).append('\'');
+        sb.append(", cycleIdentification='").append(cycleIdentification).append('\'');
+        sb.append(", reportDate=").append(reportDate);
+        sb.append(", authorizationCode='").append(authorizationCode).append('\'');
+        sb.append(", memberData='").append(memberData).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
